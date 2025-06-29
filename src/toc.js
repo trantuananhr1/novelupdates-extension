@@ -1,20 +1,19 @@
 function execute(url) {
-  const doc = fetch(url).html();
-  const list = [];
+    let doc = fetch(url).html();
+    let list = [];
 
-  doc.select("div#myTable > table > tbody > tr").forEach(row => {
-    const link = row.select("td > a");
-    const name = link.text();
-    const href = link.attr("href");
+    doc.select("div#myTable tbody tr").forEach(row => {
+        let name = row.select("td:nth-child(1)").text();
+        let link = row.select("td:nth-child(1) a").attr("href");
 
-    if (name && href) {
-      list.push({
-        name: name,
-        url: href,
-        host: "external"
-      });
-    }
-  });
+        if (name && link) {
+            list.push({
+                name: name,
+                url: link,
+                host: new URL(link).host
+            });
+        }
+    });
 
-  return Response.success(list);
+    return Response.success(list);
 }
