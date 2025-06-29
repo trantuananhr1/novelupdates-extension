@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "name": "NovelUpdates Extension",
+    "author": "Kula Diamond",
+    "version": 1,
+    "source": "https://www.novelupdates.com/",
+    "regexp": "^https:\\/\\/www\\.novelupdates\\.com\\/series\\/.*",
+    "description": "Extension để lấy thông tin và chương truyện từ NovelUpdates",
+    "locale": "en_US",
+    "tag": "",
+    "type": "novel"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "",
+    "detail": "detail.js",
+    "search": "search.js",
+    "page": "",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}
